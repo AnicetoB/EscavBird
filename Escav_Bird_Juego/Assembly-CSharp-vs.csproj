@@ -51,8 +51,10 @@
      <Compile Include="Assets\Scripts\RenderExtensions.cs" />
      <Compile Include="Assets\Scripts\ScrollInfinito.cs" />
      <Compile Include="Assets\Scripts\columnaScript.cs" />
+     <Compile Include="Assets\Scripts\gameScript.cs" />
      <Compile Include="Assets\Scripts\generadorColumnas.cs" />
      <Compile Include="Assets\Scripts\jumpScript.cs" />
+     <Compile Include="Assets\Scripts\nuevoPunto.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.0/UnityEngine.UI.dll</HintPath>
  </Reference>

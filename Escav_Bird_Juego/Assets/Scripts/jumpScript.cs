@@ -8,6 +8,10 @@ public class jumpScript : MonoBehaviour {
 	public AudioClip jumpSound;
 	public AudioClip deadSound;
 	public bool jump = false;
+	public GameObject personaje;
+	public GameObject explosion;
+	public float tiempoespera = 1;
+	public GameObject menuDesplegable;
 	
 	// Use this for initialization
 	
@@ -42,7 +46,18 @@ public class jumpScript : MonoBehaviour {
 			GameControl.dead = true;
 			AudioSource.PlayClipAtPoint(deadSound, transform.position);
 			//anim.SetBool("dead",true);
-			rigidbody2D.gravityScale = 4;
+			//rigidbody2D.gravityScale = 4;
+			Destroy(personaje, 0);
+			transform.localScale = new Vector3 (transform.localScale.x, transform.localScale.y*-1, transform.localScale.z);
+			var destroyexplosion = (GameObject)Instantiate(
+				explosion,
+				new Vector3 (transform.position.x, transform.position.y, transform.position.z),
+				transform.rotation);
+			Destroy(destroyexplosion, tiempoespera);
+			//Instantiate(
+			//	menuDesplegable,
+			//	new Vector3 (transform.position.x, transform.position.y, transform.position.z),
+			//	transform.rotation);
 		}
 	}
 }
