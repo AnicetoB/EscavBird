@@ -8,6 +8,8 @@ public class nuevoPunto : MonoBehaviour {
 
 	void Start(){
 		texto = GameObject.Find ("textoNivel").GetComponent<Text> ();
+		
+		texto.text = "Nivel " + GameControl.score.ToString ();
 	}
 	void OnTriggerEnter2D(Collider2D coll) {
 		GameControl.score = GameControl.score + 1;

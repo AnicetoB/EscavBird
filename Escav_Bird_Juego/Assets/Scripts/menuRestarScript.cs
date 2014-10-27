@@ -14,6 +14,9 @@ public class menuRestarScript : MonoBehaviour {
 	void Update () {
 		if (GameControl.dead) {
 			animacion_panel.SetBool ("menuRestartOn", true);
+			//if(Input.GetButtonDown("Jump")){
+			//	restart();
+			//}
 		}
 	}
 

@@ -15,17 +15,17 @@ public class jumpScript : MonoBehaviour {
 	
 	// Use this for initialization
 	
-	//Animator anim;
+	Animator anim;
 	void Start () {
-		//anim = GetComponent<Animator>();
+		anim = GetComponent<Animator>();
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		if(Input.GetButtonDown("Jump") && !GameControl.dead){
+		if(Input.GetMouseButtonDown(0) || Input.GetButtonDown("Jump")&& !GameControl.dead){
 			jump = true;
 		}
-		//anim.SetBool("jump",jump);
+		anim.SetBool("jump",jump); 
 	}
 	
 	void FixedUpdate() {
@@ -54,6 +54,7 @@ public class jumpScript : MonoBehaviour {
 				new Vector3 (transform.position.x, transform.position.y, transform.position.z),
 				transform.rotation);
 			Destroy(destroyexplosion, tiempoespera);
+			GameControl.score = 0;
 			//Instantiate(
 			//	menuDesplegable,
 			//	new Vector3 (transform.position.x, transform.position.y, transform.position.z),

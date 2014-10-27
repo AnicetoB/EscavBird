@@ -13,15 +13,17 @@ public class generadorColumnas : MonoBehaviour {
 	}
 
 	void Update () {
-		if (Time.time > timer) {
-			var altura = Random.Range (0,0); 
+		if (!GameControl.dead) {
+			if (Time.time > timer) {
+				var altura = Random.Range (0,0); 
 
-			var nuevacolumna = (GameObject)Instantiate(
-				columna,
-				new Vector3 (posicion.x, posicion.y+altura,posicion.z),
-				transform.rotation);
-			Destroy(nuevacolumna, tiempoespera);
-			timer = Time.time+tiempoespera;
+				var nuevacolumna = (GameObject)Instantiate(
+					columna,
+					new Vector3 (posicion.x, posicion.y+altura,posicion.z),
+					transform.rotation);
+				Destroy(nuevacolumna, tiempoespera*100);
+				timer = Time.time+tiempoespera;
+			}
 		}
 	}
 }
