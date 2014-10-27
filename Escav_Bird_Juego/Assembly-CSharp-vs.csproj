@@ -54,6 +54,7 @@
      <Compile Include="Assets\Scripts\gameScript.cs" />
      <Compile Include="Assets\Scripts\generadorColumnas.cs" />
      <Compile Include="Assets\Scripts\jumpScript.cs" />
+     <Compile Include="Assets\Scripts\jumpScript2.cs" />
      <Compile Include="Assets\Scripts\menuRestarScript.cs" />
      <Compile Include="Assets\Scripts\nuevoPunto.cs" />
      <Compile Include="Assets\Scripts\puntuacionScript.cs" />
