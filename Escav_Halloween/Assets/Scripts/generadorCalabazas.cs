@@ -4,7 +4,6 @@ using System.Collections;
 public class generadorCalabazas : MonoBehaviour {
 
 	public GameObject columna;
-	public float tiempoespera = 3;
 	public float tiempodestroy = 3;
 	public float mascalabazas = 0.01f;
 	Vector3 posicion;
@@ -24,12 +23,12 @@ public class generadorCalabazas : MonoBehaviour {
 				new Vector3 (posicion.x+phorizontal, posicion.y,posicion.z),
 				transform.rotation);
 			Destroy(nuevacolumna, tiempodestroy);
-			timer = Time.time+tiempoespera;
+			timer = Time.time+GameControl.tiempoespera;
 		}
 
 		if (Mathf.Round (Time.fixedTime) > timer2) {
 			timer2 = timer2 +1;
-			tiempoespera = tiempoespera-mascalabazas;	
+			GameControl.tiempoespera = GameControl.tiempoespera-mascalabazas;	
 		}
 	}
 }

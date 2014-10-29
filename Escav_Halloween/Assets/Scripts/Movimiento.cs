@@ -7,7 +7,7 @@ public class Movimiento : MonoBehaviour {
 	public int vvertical = 1;
 	Vector3 movimiento;
 	Vector3 posicionRaton;
-	Animator animation;
+	Animator animation; 
 
 	void Start(){
 		animation = GetComponent <Animator> ();
@@ -15,7 +15,8 @@ public class Movimiento : MonoBehaviour {
 	}
 	
 	void Update() {
-		if (!GameControl.dead) {
+
+		if (!GameControl.dead && !GameControl.limit) {
 				posicionRaton = Input.mousePosition;
 
 				posicionRaton = Camera.main.ScreenToWorldPoint (posicionRaton);
@@ -25,6 +26,7 @@ public class Movimiento : MonoBehaviour {
 					animation.SetBool ("Escavillo_mov", true);
 				}
 		}
+
 	}
 
 	void OnCollisionEnter2D(Collision2D col){
@@ -34,6 +36,8 @@ public class Movimiento : MonoBehaviour {
 			transform.localScale = new Vector3 (transform.localScale.x, transform.localScale.y*-1, transform.localScale.z);
 			rigidbody2D.gravityScale = 2;
 		}
+
 	}
-	
+
+
 }
