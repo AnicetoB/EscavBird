@@ -10,9 +10,11 @@ public class generadorCalabazas : MonoBehaviour {
 	float timer = 0;
 	float timer2 = 1;
 	public float limitcalabazas = 2.5f;
+	public float tiempoespera = 1.5f;
 	
 	void Start () {
 		posicion = transform.position;
+		tiempoespera = 1.5f;
 	}
 
 	void Update () {
@@ -23,12 +25,14 @@ public class generadorCalabazas : MonoBehaviour {
 				new Vector3 (posicion.x+phorizontal, posicion.y,posicion.z),
 				transform.rotation);
 			Destroy(nuevacolumna, tiempodestroy);
-			timer = Time.time+GameControl.tiempoespera;
+			timer = Time.time+tiempoespera;
 		}
 
-		if (Mathf.Round (Time.fixedTime) > timer2) {
+		//El timeSinceLevelLoad permite que al cargar de nuevo el nivel los tiempos se reinicien
+		// fixedTime siempre se ejecuta, aunque el nivel sea reiniciado
+		if (Mathf.Round (Time.timeSinceLevelLoad) > timer2) {
 			timer2 = timer2 +1;
-			GameControl.tiempoespera = GameControl.tiempoespera-mascalabazas;	
+			tiempoespera = tiempoespera-mascalabazas;	
 		}
 	}
 }

@@ -19,9 +19,9 @@ public class menuRestarScript : MonoBehaviour {
 
 	public void restart(){
 		animacion_panel.SetBool ("MenuRest", false);
-		Application.LoadLevel (Application.loadedLevel);
 		GameControl.dead = false;
-		GameControl.tiempoespera = 1.5f;
+		GameControl.score = 0;
+		Application.LoadLevel (Application.loadedLevel);
 	}
 
 	public void quit(){

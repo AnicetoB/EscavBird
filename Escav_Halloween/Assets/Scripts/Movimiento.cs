@@ -24,7 +24,12 @@ public class Movimiento : MonoBehaviour {
 				if (Input.GetMouseButton (0)) {
 					transform.position = Vector2.Lerp (transform.position, posicionRaton, vvertical * 0.1f);
 					animation.SetBool ("Escavillo_mov", true);
+
+				} else if (Input.GetMouseButtonUp (0)) {
+					animation.SetBool ("Escavillo_mov", false);
 				}
+
+
 		}
 
 	}
